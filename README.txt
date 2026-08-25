@@ -1,48 +1,37 @@
-Brigandine Abyss — Russian text patch
-=====================================
+===========
 
-This folder patches an existing Steam install. It does not ship the game.
+ИНСТРУКЦИЯ
 
-The Russian translation occupies the Simplified Chinese language slot.
-In Options the slot is labeled «Русский».
+===========
 
-Install
--------
-1. Copy this entire AbyssRussian folder into:
+Сохраните этот репозиторий в папку с демоверсией Brigandine Abyss (примерный путь: SteamLibrary \ steamapps \ common \ HPN_NPJ).
 
-     steamapps\common\HPN_NPJ
+Распакуйте ZIP-файл BrigandineAbyssDemoRussian-main.zip в папку HPN_NPJ.
 
-   or keep it next to BrigandineAbyss\Content\Paks.
+Откройте папку, затем запустите файл PatchRussian.bat.
 
-2. Double-click PatchRussian.bat.
+Если вы используете интерактивный брандмауэр, может появиться уведомление о запуске Windows PowerShell и hpatchz.exe. Для выполнения необходимых операций им не требуется подключение к Интернету.
 
-3. Start the game and set language to Русский (the former
-   Simplified Chinese entry).
+После завершения установки патча закройте программу установки и запустите игру.
 
-The patcher:
-- Applies a Cyrillic font hdiff to the stock BrigandineAbyss-Windows.pak
-  (no unpacking of game files on your machine).
-- Copies z0RussianUI_P.pak / .ucas / .utoc into Content\Paks.
+В главном меню игры откройте «Настройки» (второй пункт снизу), затем выберите «Язык» (первый пункт). Если в игре установлен английский язык, переключайте варианты вправо, пока не выберете русский.
 
-Uninstall
----------
-Steam → Properties → Installed Files → Verify integrity of game files.
-That restores the stock font pak. Then delete z0RussianUI_P.* from
-BrigandineAbyss\Content\Paks.
+Поскольку этот перевод на русский язык выполнен машинным способом, а я не знаю русского языка, я могу только надеяться, что его будет достаточно для прохождения демоверсии. Кроме того, я не проверял, выходит ли где-либо текст за границы интерфейса, поэтому заранее прошу прощения.
 
-Notes
------
-- After a Steam verify, run PatchRussian.bat again.
+В демоверсии всё ещё могут встречаться непереведённые фрагменты текста, за что я также приношу извинения. Надеюсь, что в будущем кто-нибудь возьмётся за создание качественного перевода, а пока предлагается эта версия.
 
-Font
-----
-The font patch embeds Noto Sans Regular (SIL Open Font License 1.1)
-into the three Japanese UI font faces inside Windows.pak via hdiff.
-See OFL.txt. Stock Windows.pak is 41,646,580 bytes; after the font
-patch it is 30,672,341 bytes.
+Спасибо за понимание.
 
-Alignment
----------
-See VERIFY.txt. English keys were checked 1:1 against the patched
-Simplified Chinese tables: no row sliding, no leftover Simplified
-Chinese in translatable strings.
+Чтобы удалить этот патч, откройте папку установки игры, затем перейдите в папку Content, а после этого — в папку Paks.
+
+Удалите следующие файлы:
+
+z0RussianUI_P.pak
+
+z0RussianUI_P.ucas
+
+z0RussianUI_P.utoc
+
+Затем в Steam выполните проверку целостности файлов игры. Это должно восстановить файл:
+
+BrigandineAbyss-Windows.pak
