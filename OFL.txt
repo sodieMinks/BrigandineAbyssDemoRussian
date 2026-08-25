@@ -1,0 +1,8 @@
+This patch embeds Noto Sans (Copyright 2015-2022 Google LLC)
+licensed under the SIL Open Font License, Version 1.1.
+
+https://github.com/notofonts/latin-greek-cyrillic
+https://scripts.sil.org/OFL
+
+The OFL allows the font to be bundled with this software. The font may not
+be sold by itself. The full SIL Open Font License 1.1 text applies.

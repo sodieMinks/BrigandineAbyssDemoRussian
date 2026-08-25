@@ -1,0 +1,45 @@
+Russian vs English alignment (patched Simplified Chinese slot)
+==============================================================
+
+Source: English DataTable rows (9329 catalog rows, 68 families).
+Russian is applied onto DT_*_zh-Hans.uexp, then packed as z0RussianUI_P.
+
+Key-based check (every non-dummy English key):
+  translated OK          9142
+  dummy / excluded skip   184
+  leftover Simplified Chinese in those keys: 0
+  placeholder mismatches: 0
+  row-slide (placeholder of row i matching row i+1): 0
+
+Shift re-check (JSON source vs JSON ru vs patched zh-Hans):
+  JSON key-order slides vs English source batches: 0
+  patched shared-key order vs English tables: 0
+  neighbor placeholder theft (ru[i] matches en[i+1]): 0
+  neighbor length/token shift: 0
+  patched value != JSON map: 0
+
+Remaining CJK in the patched zh-Hans slot:
+  GT_CHANGEINFO  翻訳対象外  (engine dummy; not shown)
+
+Language-menu labels (Noto Sans has no CJK, so these are Latin/Cyrillic):
+  SYS_LANG_COUNTRY_ZH_HANS  Русский
+  SYS_LANG_COUNTRY_JP       Japanese
+  SYS_LANG_COUNTRY_ZH_HANT  Chinese (Trad.)
+  SYS_LANG_COUNTRY_FR       Español
+
+BattleMessageText: English/Japanese have 23 keys; Simplified Chinese
+has 8 extra keys (skill-up, third-force conditions, etc.). Those extras
+are translated. Three Chinese cells (MSG_VDC_PROTECT / ALLARRIVE / DEATH)
+are binary-corrupt in the stock zh-Hans table (null bytes) and cannot be
+rewritten without replacing the whole table. MSG_VDC_SURVIVE exists in
+EN/JA but not in zh-Hans
+(Chinese uses MSG_VDC_TURNSURVIVE instead, which is translated).
+
+Dummy Japanese markers (翻訳対象外, 仮説明文, 出てはいけない説明) were
+left as-is where the English source was also a dummy.
+
+Spot checks:
+  Status tab          Статус
+  Confirm             Подтвердить
+  Opening line        Когда-то мир был спасён / силой Бригандина.
+  Revival line        Я провозглашаю возрождение Абисслоа!!
